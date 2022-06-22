@@ -9,3 +9,12 @@
 
 # Idea settings ignored
 .idea/
+
+# Environment variables
+.env
+
+# Vendor
+vendor/
+
+# Database
+*.sql
