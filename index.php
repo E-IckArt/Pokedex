@@ -1,6 +1,8 @@
 <?php
-include_once('controller/PokemonManager.php');
+require_once('models/PokemonManager.php');
+require_once('controllers/getAll.php');
 ?>
+
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -14,19 +16,15 @@ include_once('controller/PokemonManager.php');
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex flex-column min-vh-100 bg-light">
+
     <?php include_once './components/header.php' ?>
+
+
     <main class="container">
-        <div class="row">
-            <div class="col mt-5">
-                <div class="card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="image de Bulbizarre">
-                    <div class="card-body">
-                        <h5 class="card-title">Bulbizarre</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-warning">Modifier</a>
-                    </div>
-                </div>
+        <div class="row ">
+            <div class="col d-flex flex-wrap mt-5">
+                <?php require_once './views/getAll.php'; ?>
             </div>
         </div>
     </main>
