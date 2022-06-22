@@ -8,7 +8,7 @@ class Pokemon
     private $description;
     private $type1;
     private $type2;
-    
+
     /* 
     * Simulation des données reçues par la base de données :
     * $data = [
@@ -20,7 +20,8 @@ class Pokemon
     */
 
     // Ici on créer un constructeur pour hydrater un objet dès sa création
-    public function __construct(array $data) {
+    public function __construct(array $data)
+    {
         $this->hydrate($data);
     }
 
@@ -28,8 +29,8 @@ class Pokemon
     public function hydrate(array $data)
     {
         foreach ($data as $key => $value) {
-            $method = 'set'. ucfirst($key);
-            if(method_exists($this, $method)) {
+            $method = 'set' . ucfirst($key);
+            if (method_exists($this, $method)) {
                 $this->$method($value);
             }
         }
@@ -53,7 +54,6 @@ class Pokemon
     public function setId($id)
     {
         $this->id = $id;
-
         return $this;
     }
 
@@ -94,7 +94,6 @@ class Pokemon
     public function setName($name)
     {
         $this->name = $name;
-
         return $this;
     }
 
@@ -118,7 +117,6 @@ class Pokemon
             strip_tags($description);
             $this->description = $description;
         }
-
         return $this;
     }
 
@@ -138,7 +136,6 @@ class Pokemon
     public function setType1($type1)
     {
         $this->type1 = $type1;
-
         return $this;
     }
 
@@ -158,7 +155,6 @@ class Pokemon
     public function setType2($type2)
     {
         $this->type2 = $type2;
-
         return $this;
     }
 }
