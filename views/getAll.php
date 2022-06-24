@@ -2,18 +2,22 @@
 // echo '<pre>';
 // var_dump($pokemons);
 foreach ($pokemons as $pokemon) : ?>
-    <div class="card mt-5 mx-auto shadow" style="width: 18rem;">
+    <div class="card mt-5 mx-auto bg-dark text-info shadow" style="width: 18rem;">
         <img src="..." class="card-img-top" alt="image de <?= $pokemon->getName() ?>">
-        <div class="card-body">
+        <div class="card-body px-4">
             <h5 class="card-title">
                 <?= $pokemon->getNumber() // BUGFIX- Revoir le code car l'appel ne fonctionne pas : Number = NULL
                 ?># <?= $pokemon->getName() ?></h5>
             <div class="card-text">
                 <p><?= substr($pokemon->getDescription(), 0, 210) ?> ...</p>
+                <p><?= $pokemon->getType1() // BUGFIX- Renvoyer le nom et pas l'id 
+                    ?> ...</p>
+                <p><?= $pokemon->getType2() // // BUGFIX- Renvoyer le nom et pas l'id
+                    ?> ...</p>
             </div>
             <div class="d-flex flex-wrap justify-content-evenly">
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary mx-auto my-3" data-bs-toggle="modal" data-bs-target="#descriptionModal">
+                <button type="button" class="btn btn-info mx-auto my-3" data-bs-toggle="modal" data-bs-target="#descriptionModal">
                     Voir la description complète
                 </button>
                 <a href="#" class="btn btn-warning">Modifier</a>
