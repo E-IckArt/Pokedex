@@ -1,5 +1,5 @@
 <?php
-require_once('models/PokemonManager.php');
+require_once('controllers/PokemonManager.php');
 require_once('controllers/getAll.php');
 ?>
 
