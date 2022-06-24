@@ -17,7 +17,7 @@
                         <a class="nav-link text-primary" href="#">Types</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-primary" href="#">Ajouter un pokémon</a>
+                        <a class="nav-link text-primary" href="create.php">Ajouter un pokémon</a>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
