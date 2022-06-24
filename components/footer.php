@@ -3,14 +3,14 @@
         <div class="container-fluid">
             <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                 <li class="nav-item me-3">
-                    <a class="nav-link text-primary" href="#">Me contacter</a>
+                    <a class="nav-link text-info" href="#">Me contacter</a>
                 </li>
                 <li class="nav-item me-3">
-                    <a class="nav-link text-primary" href="https://github.com/E-IckArt">Voir mes autres projets</a>
+                    <a class="nav-link text-info" href="https://github.com/E-IckArt">Voir mes autres projets</a>
                 </li>
                 <li class="nav-item me-3">
                     <!-- Link trigger modal -->
-                    <a class="nav-link text-primary" href="#" role="button" data-bs-toggle="modal" data-bs-target="#LegalNotices">Mentions légales</a>
+                    <a class="nav-link text-info" href="#" role="button" data-bs-toggle="modal" data-bs-target="#LegalNotices">Mentions légales</a>
                 </li>
             </ul>
         </div>
@@ -20,11 +20,11 @@
 <div class="modal fade" id="LegalNotices" tabindex="-1" aria-labelledby="LegalNoticesLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content bg-light">
-            <div class="modal-header bg-dark text-primary">
+            <div class="modal-header bg-dark text-info">
                 <h5 class="modal-title" id="LegalNoticesLabel">
                     Mentions Légales
                 </h5>
-                <button type="button" class="btn-close btn-outline-primary" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close btn-outline-info" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body px-5">
                 <p>
@@ -76,8 +76,8 @@
                         repellat id magnam voluptates in?</span>
                 </p>
             </div>
-            <div class="modal-footer bg-dark text-primary">
-                <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">
+            <div class="modal-footer bg-dark text-info">
+                <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">
                     Fermer
                 </button>
             </div>
