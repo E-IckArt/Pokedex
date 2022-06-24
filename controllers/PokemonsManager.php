@@ -2,7 +2,7 @@
 require './models/Pokemon.php';
 // require '../dotenv.php'; // lien fonctionnel
 
-class PokemonManager
+class PokemonsManager
 {
     private $db;
 
