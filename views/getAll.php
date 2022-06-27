@@ -1,12 +1,10 @@
 <?php
-// echo '<pre>';
-// var_dump($pokemons);
 foreach ($pokemons as $pokemon) : ?>
     <div class="card mt-5 mx-auto bg-dark text-info shadow" style="width: 18rem;">
         <img src="..." class="card-img-top" alt="image de <?= $pokemon->getName() ?>">
         <div class="card-body px-4">
             <h5 class="card-title">
-                <?= $pokemon->getNumber() // BUGFIX- Revoir le code car l'appel ne fonctionne pas : Number = NULL
+                <?= $pokemon->getNumber()  // BUGFIX- Revoir le code car l'appel ne fonctionne pas : Number = NULL
                 ?># <?= $pokemon->getName() ?></h5>
             <div class="card-text">
                 <p><?= substr($pokemon->getDescription(), 0, 210) ?> ...</p>
@@ -33,7 +31,7 @@ foreach ($pokemons as $pokemon) : ?>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body mx-auto px-5">
-                        <?= $pokemon->getDescription() // BUGFIX- Description de bulbizarre au lieu de pikachu sur la 2nde carte
+                        <?= $pokemon->getDescription() // BUGFIX- Description de bulbizarre sur toutes les modales
                         ?>
                     </div>
                     <div class="modal-footer">

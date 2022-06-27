@@ -22,15 +22,17 @@ class PokemonsManager
 
     public function create(Pokemon $pokemon)
     {
-        $req = $this->db->prepare("INSERT INTO `pokemon` (number, name, description, type1, type2) VALUE (:number, :name, :description, :type1, :type2");
+        $req = $this->db->prepare("INSERT INTO `pokemon` (number, name, description, type1, type2, image) VALUE (:number, :name, :description, :type1, :type2, :image)");
 
         $req->bindValue(":number", $pokemon->getNumber(), PDO::PARAM_INT);
         $req->bindValue(":name", $pokemon->getName(), PDO::PARAM_STR);
         $req->bindValue(":description", $pokemon->getDescription(), PDO::PARAM_STR);
         $req->bindValue(":type1", $pokemon->getType1(), PDO::PARAM_INT);
         $req->bindValue(":type2", $pokemon->getType2(), PDO::PARAM_INT);
+        $req->bindValue(":image", $pokemon->getImage(), PDO::PARAM_INT);
 
         $req->execute();
+        $req->closeCursor();
     }
 
     public function get(int $id)
@@ -51,7 +53,6 @@ class PokemonsManager
             $pokemon = new Pokemon($data);
             $pokemons[] = $pokemon;
         }
-        $req->closeCursor();
         return $pokemons;
     }
 
@@ -66,16 +67,11 @@ class PokemonsManager
             $pokemon = new Pokemon($data);
             $pokemons[] = $pokemon;
         }
-
-        $req->closeCursor();
         return $pokemons;
     }
 
     public function getAllByType(string $input)
     {
-        /*if ($input instanceof Type) {
-        # code...
-        }*/
         $pokemons = [];
         $req = $this->db->prepare("SELECT * FROM `pokemon` WHERE type LIKE :input ORDER BY number");
         $req->bindValue(":input", $input, PDO::PARAM_STR);
@@ -89,15 +85,17 @@ class PokemonsManager
 
     public function update(Pokemon $pokemon)
     {
-        $req = $this->db->prepare("UPDATE `pokemon` SET number = :number, name = :name, description = :description, type1 = :type1, type2 = :type2");
+        $req = $this->db->prepare("UPDATE `pokemon` SET number = :number, name = :name, description = :description, type1 = :type1, type2 = :type2, image = :image");
 
         $req->bindValue(":number", $pokemon->getNumber(), PDO::PARAM_INT);
         $req->bindValue(":name", $pokemon->getName(), PDO::PARAM_STR);
         $req->bindValue(":description", $pokemon->getDescription(), PDO::PARAM_STR);
         $req->bindValue(":type1", $pokemon->getType1(), PDO::PARAM_INT);
         $req->bindValue(":type2", $pokemon->getType2(), PDO::PARAM_INT);
+        $req->bindValue(":image", $pokemon->getImage(), PDO::PARAM_INT);
 
         $req->execute();
+        $req->closeCursor();
     }
 
     public function delete(int $id)
@@ -105,5 +103,6 @@ class PokemonsManager
         $req = $this->db->prepare("DELETE FROM `Pokemon` WHERE id = :id ");
         $req->bindValue(":id", $id, PDO::PARAM_INT);
         $req->execute();
+        $req->closeCursor();
     }
 }
