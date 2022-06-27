@@ -36,7 +36,6 @@ class TypesManager
         $req = $this->db->prepare("SELECT * FROM `type` WHERE id = :id");
         $req->bindValue(':id', $id, PDO::PARAM_INT);
         $data = $req->fetch();
-        $req->closeCursor();
         return new Type($data);
     }
 
@@ -49,7 +48,6 @@ class TypesManager
             $type = new Type($data);
             $types[] = $type;
         }
-        $req->closeCursor();
         return $types;
     }
 
@@ -63,7 +61,6 @@ class TypesManager
             $type = new Type($data);
             $types[] = $type;
         }
-        $req->closeCursor();
         return $types;
     }
 
@@ -77,7 +74,6 @@ class TypesManager
             $type = new Type($data);
             $types[] = $type;
         }
-        $req->closeCursor();
         return $types;
     }
 
