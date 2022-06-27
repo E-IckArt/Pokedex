@@ -22,7 +22,7 @@ class ImagesManager
 
     public function create(Image $image)
     {
-        $req = $this->db->prepare("INSERT INTO `image` (name, path) VALUE (:name, :path");
+        $req = $this->db->prepare("INSERT INTO `image` (name, path) VALUE (:name, :path)");
 
         $req->bindValue(":name", $image->getName(), PDO::PARAM_STR);
         $req->bindValue(":path", $image->getPath(), PDO::PARAM_STR);
@@ -31,26 +31,24 @@ class ImagesManager
         $req->closeCursor(); // Libère la connexion au serveur, permet ainsi à d'autres requêtes SQL d'être exécutées, mais laisse la requête dans un état lui permettant d'être de nouveau exécutée.
     }
 
-    public function get(int $id)
+    public function get($id)
     {
         $req = $this->db->prepare("SELECT * FROM `image` WHERE id = :id");
-        $req->bindValue(':id', $id, PDO::PARAM_INT);
+        $req->bindValue(":id", $id, PDO::PARAM_INT);
         $data = $req->fetch();
         $image = new Image($data);
-        $req->closeCursor();
         return $image;
     }
 
     public function getLastImageId()
     {
         $req = $this->db->query("SELECT * FROM `image` ORDER BY id DESC LIMIT 1");
-        $req->closeCursor();
         return $req->fetch()["id"];
     }
 
     public function update(Image $image)
     {
-        $req = $this->db->prepare("UPDATE `image` SET name = :name, path = :path, image1 = :image1, image2 = :image2");
+        $req = $this->db->prepare("UPDATE `image` SET name = :name, path = :path");
 
         $req->bindValue(":name", $image->getName(), PDO::PARAM_STR);
         $req->bindValue(":path", $image->getPath(), PDO::PARAM_STR);
