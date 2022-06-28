@@ -42,7 +42,7 @@ class Pokemon
     /**
      * Get the value of id
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -52,7 +52,7 @@ class Pokemon
      *
      * @return  self
      */
-    public function setId($id)
+    public function setId($id): Pokemon
     {
         $this->id = $id;
         return $this;
@@ -61,7 +61,7 @@ class Pokemon
     /**
      * Get the value of number
      */
-    public function getNumber()
+    public function getNumber(): int
     {
         return $this->number;
     }
@@ -73,9 +73,7 @@ class Pokemon
      */
     public function setNumber($number)
     {
-        if (is_int($number) < 800) {
-            $this->number = $number;
-        }
+        $this->number = $number;
         return $this;
     }
 
