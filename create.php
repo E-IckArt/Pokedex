@@ -1,10 +1,6 @@
 <?php
-// require_once('controllers/PokemonsManager.php');
-// require_once('controllers/TypesManager.php');
-// require_once('controllers/ImagesManager.php');
 require_once('controllers/create.php');
 require_once('controllers/getAll.php');
-
 ?>
 
 <!DOCTYPE html>
@@ -24,9 +20,9 @@ require_once('controllers/getAll.php');
     no-repeat center; background-size: cover;">
 
     <?php
-    require_once './components/header.php';
+    require_once './layouts/header.php';
     require_once 'views/create.php';
-    require_once './components/footer.php';
+    require_once './layouts/footer.php';
     ?>
 
     <!-- Bootstrap JavaScript Bundle with Popper -->

@@ -26,7 +26,7 @@
                 </div>
                 <div class="col-12 mb-3">
                     <label for="description" class="form-label">Description</label>
-                    <textarea class="form-control" id="description" name="description" minlength="40" maxlength="1000" rows="10" placeholder="La description du pokémon"></textarea>
+                    <textarea class="form-control" id="description" name="description" minlength="20" maxlength="1000" rows="10" placeholder="La description du pokémon"></textarea>
                 </div>
                 <div class="col-6 mb-3">
                     <label for="type1" class="form-label">Type 1</label>
