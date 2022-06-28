@@ -3,6 +3,9 @@
         <div class="container-fluid">
             <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                 <li class="nav-item me-3">
+                    <a class="nav-link text-info disabled" href="#">© Juin 2022 - Emi IckArt</a>
+                </li>
+                <li class="nav-item me-3">
                     <a class="nav-link text-info" href="#">Me contacter</a>
                 </li>
                 <li class="nav-item me-3">
