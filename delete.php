@@ -1,6 +1,8 @@
 <?php
 require('controllers/delete.php');
-require('controllers/getAll.php');
+$pokemonManager = new PokemonsManager();
+$pokemons = $pokemonManager->getAll();
+
 ?>
 
 <!DOCTYPE html>

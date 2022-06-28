@@ -6,6 +6,7 @@ $typesManager = new TypesManager();
 require_once('controllers/ImagesManager.php');
 $imagesManager = new ImagesManager();
 $pokemons = $pokemonManager->getAll();
+$types = $typesManager->getAll();
 ?>
 
 

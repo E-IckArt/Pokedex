@@ -38,10 +38,9 @@ class PokemonsManager
     public function get(int $id)
     {
         $req = $this->db->prepare("SELECT * FROM `pokemon` WHERE id = :id");
-        $req->bindValue(':id', $id, PDO::PARAM_INT);
+        $req->execute([":id" => $id]);
         $data = $req->fetch();
-        $pokemon = new Pokemon($data);
-        return $pokemon;
+        return new Pokemon($data);
     }
 
     public function getAll(): array
@@ -85,8 +84,9 @@ class PokemonsManager
 
     public function update(Pokemon $pokemon)
     {
-        $req = $this->db->prepare("UPDATE `pokemon` SET number = :number, name = :name, description = :description, type1 = :type1, type2 = :type2, image = :image");
+        $req = $this->db->prepare("UPDATE `pokemon` SET number = :number, name = :name, description = :description, type1 = :type1, type2 = :type2, image = :image WHERE id =:id ");
 
+        $req->bindValue(":id", $pokemon->getId($_GET['id']));
         $req->bindValue(":number", $pokemon->getNumber(), PDO::PARAM_INT);
         $req->bindValue(":name", $pokemon->getName(), PDO::PARAM_STR);
         $req->bindValue(":description", $pokemon->getDescription(), PDO::PARAM_STR);
