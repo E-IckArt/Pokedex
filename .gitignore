@@ -21,3 +21,6 @@ vendor/
 
 # DBlogs
 dblogs.log
+
+# Database credencials
+db.ini
