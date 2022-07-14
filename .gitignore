@@ -10,11 +10,22 @@
 # Idea settings ignored
 .idea/
 
-# Environment variables
+# Logs
+logs
+*.log
+
+# dotenv environment variables file
 .env
+.env.test
+
+# Gatsby files
+.cache/
 
 # Vendor
 vendor/
+
+# Database credencials
+db.ini
 
 # Database
 *.sql
