@@ -28,7 +28,7 @@ vendor/
 db.ini
 
 # Database
-*.sql
+pokedex.sql
 
 # DBlogs
 dblogs.log
