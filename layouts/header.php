@@ -13,7 +13,7 @@
 
 <body class="d-flex flex-column min-vh-100 bg-light" style="background: url(https://www.media.pokekalos.fr/img/jeux/pokemongo/fonds/23.png)
     no-repeat center; background-size: cover;">
-    <header class="text-info">
+    <header class="text-info mb-5">
         <nav class="navbar navbar-expand-lg bg-dark">
             <div class="container-fluid">
                 <a class="navbar-brand text-info" href="index.php">

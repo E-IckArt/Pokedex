@@ -13,16 +13,13 @@ $title = "Pokedex - Accueil";
 include_once './layouts/header.php'
 ?>
 
-
 <main class="container">
     <div class="row">
-        <!-- <div class="col d-flex flex-wrap mt-5"> -->
         <?php require_once './views/getAll.php'; ?>
-        <!-- </div> -->
     </div>
     <div class="row">
-        <div class="col-6 my-5 mx-auto text-center">
-            <a href="create.php" class="btn btn-success">Créer un pokemon</a>
+        <div class="col-6 mt-3 mb-5 mx-auto text-center">
+            <a href="create.php" class="btn btn-success fw-bold">Créer un pokemon</a>
         </div>
     </div>
 </main>
