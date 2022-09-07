@@ -5,7 +5,7 @@ foreach ($pokemons as $pokemon) : ?>
     // $typesManager->get($pokemon->getType1());
     ?>
     <div class="col m-2">
-        <div class="card h-100 mx-auto bg-dark text-info shadow" style="width: 16rem;">
+        <div class="card h-75 mx-auto bg-dark text-info shadow" style="width: 16rem;">
             <img src="<?= $imagesManager
                             ->get($pokemon->getImage())
                             ->getPath() ?>" class="card-img-top w-auto h-25 p-2 mx-auto mt-3 border border-white rounded-3" alt="image de <?= $pokemon->getName() ?>">
